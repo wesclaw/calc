@@ -83,3 +83,42 @@
 // createBtns()
 
 
+
+
+
+
+
+
+
+
+
+
+
+const btns_numbers_wrapper = document.querySelector('.btns-numbers-wrapper')
+const small_calculation = document.querySelector('.small-calculation')
+const main_calculation = document.querySelector('.main-calculation')
+
+const btns = ['0','1','2','3','4','5','6','7','8','9','+','-','/','*','C','.','=']
+
+let leftCalc;
+let rightCalc;
+let operator;
+
+let firstCalc = []
+
+function calculate(e){
+  const getTextTarget = e.target.textContent;
+  main_calculation.value += getTextTarget;
+
+  
+}
+
+btns.forEach((btn)=>{
+  const btn_el = document.createElement('button')
+  btn_el.classList.add('numberBtns')
+  btn_el.textContent = btn
+  btns_numbers_wrapper.append(btn_el)
+  btn_el.addEventListener('click', calculate)
+})
+
+
